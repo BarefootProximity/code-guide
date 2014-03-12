@@ -1,0 +1,51 @@
+// *************************************
+//
+//   Settings
+//   -> Fonts, Variables
+//
+// *************************************
+
+// -------------------------------------
+//   @font-face
+// -------------------------------------
+
+$font-dir: "/fonts/fontello";
+
+@font-face {
+  font-family: 'fontello';
+  src: url("#{font-dir}/fontello.eot");
+  src: url("#{font-dir}font/fontello.eot#iefix") format('embedded-opentype'),
+       url("#{font-dir}font/fontello.woff") format('woff'),
+       url("#{font-dir}font/fontello.ttf") format('truetype'),
+       url("#{font-dir}font/fontello.svg") format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="icon-"]:before, [class*=" icon-"]:before {
+  font-family: "fontello";
+  font-style: normal;
+  font-weight: normal;
+  speak: none;
+  display: inline-block;
+  text-decoration: inherit;
+  width: 1em;
+  margin-right: .2em;
+  text-align: center;
+  font-variant: normal;
+  text-transform: none;
+}
+
+// -------------------------------------
+//   Variables
+// -------------------------------------
+
+
+$font-size-base:      16px;
+
+// Susy Grid system
+// --------------------------
+$total-columns  : 16;             // a 16-column grid
+$column-width   : 3.43752em;       // each column is 2.8125em (55px) wide
+$gutter-width   : 1.25em;         // 1.25em (20px) gutters between columns
+$grid-padding   : $gutter-width/2;  // grid-padding equal to gutters

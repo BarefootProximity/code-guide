@@ -1,28 +1,42 @@
-# Code Guide
+# Getting Started Guide
 
-Code Guide is a project for documenting standards for developing flexible, durable, and sustainable HTML and CSS. It comes from years of experience writing code on projects of all sizes. It's not the end-all be-all, but it's a start.
+I am using [Middleman](http://middlemanapp.com/getting-started/), [Susy Grid Framework](http://susy.oddbird.net/) and [Bootstrap](http://getbootstrap.com) as a baseline getting-started framework for new sites.
 
-**[Start reading ☞](http://mdo.github.io/code-guide)**
+## Setup Instructions
 
----
+* `git clone -b git@github.com:procload/getting-started.git YOUR_PROJECT_NAME`
+* `cd YOUR_PROJECT_NAME`
+* `gem install bundler`
+* `git remote add production git@heroku.com:app-name.git`
+* `git remote add staging git@heroku.com:app-name-staging.git`
+* `bundle exec middleman` (to run in your local browser)`
+* `bundle exec middleman build` (to generate a build for tagging on the server)`
 
-### License
+## Deploying
+I typically run two separate sites when developing: Staging and
+Production. I host both on Heroku because it's free and easy. If you
+want to mimic my setup use the following configuration options with your
+own Heroku configuration.
 
-Released under MIT by, and copyright 2014, @mdo.
+### Staging
+* `rake staging:deploy`
 
-### Thanks
+### Production
+* `rake production:deploy`
 
-Heavily inspired by [Idiomatic CSS](https://github.com/necolas/idiomatic-css) and the [GitHub Styleguide](http://github.com/styleguide).
+## Heroku Setup in Git
 
-### Translations
+    git remote add production git@heroku.com:app-name.git
+    git remote add staging git@heroku.com:app-name-staging.git
 
-Translations are maintained by their creators and may not always be up to date with the original here.
 
-- [Portuguese](http://diegoeis.github.io/code-guide/) - Translated by [Diego Eis](http://tableless.com.br/)  
-- [Spanish](http://adrianayala.mx/code-guide/es/) - Translated by [Adrian Ayala](http://adrianayala.mx/)  
-- [Indonesian](http://diagramatics.github.io/code-guide-id) - Translated by [Steven Sinatra](http://diagramatics.me)
-- [Chinese](http://zoomzhao.github.io/code-guide/) - Translated by [Zoom Zhao](https://github.com/ZoomZhao)  
+##Differences in Servers
+Production: (client-facing, used for presentations)
+Staging: (internally-facing, used for experimental changes)
 
-Have a translation you'd like to link to? Open a pull request to add it.
+Name | URL | 
+:------------ | :-------------  
+**Production** | <https://app-name.herokuapp.com/>   
+**Staging** | <https://app-name-staging.herokuapp.com/>  
 
-<3
+
